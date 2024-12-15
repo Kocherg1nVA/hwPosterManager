@@ -31,6 +31,21 @@ public class PosterManagerTest {
     }
 
     @Test
+    public void shouldFindLastIfLimitEqualsMoviesLength() {
+        PosterManager manager = new PosterManager();
+        manager.addMovie("Hellboy");
+        manager.addMovie("Deadpool");
+        manager.addMovie("Alien");
+        manager.addMovie("Dune: Part Two");
+        manager.addMovie("Twisters");
+        manager.findRequirementLength();
+        manager.findLast();
+        String[] expected = {"Twisters", "Dune: Part Two", "Alien", "Deadpool", "Hellboy"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
     public void shouldFindLastIfLimitLowThenMoviesLength() {
         PosterManager manager = new PosterManager(6);
         manager.addMovie("Deadpool");
