@@ -37,23 +37,19 @@ public class PosterManager {
     }
 
     public String[] findLast() {
-
-        String[] last = new String[0];
-
         if (this.requiredLength < this.movie.length) {
             int result = this.movie.length - this.limit;
-            String[] tmp1 = new String[limit];
+            String[] last = new String[this.limit];
             for (int i = 0; i < this.movie.length - result; i++) {
-                tmp1[i] = this.movie[this.movie.length - 1 - i];
-                last = tmp1;
+                last[i] = this.movie[this.movie.length - 1 - i];
             }
+            return last;
         } else {
-            String[] tmp2 = new String[this.requiredLength];
+            String[] last = new String[this.requiredLength];
             for (int i = 0; i < this.movie.length; i++) {
-                tmp2[i] = this.movie[this.movie.length - 1 - i];
-                last = tmp2;
+                last[i] = this.movie[this.movie.length - 1 - i];
             }
+            return last;
         }
-        return last;
     }
 }
