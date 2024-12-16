@@ -23,7 +23,6 @@ public class PosterManagerTest {
         manager.addMovie("Hellboy");
         manager.addMovie("Deadpool");
         manager.addMovie("Alien");
-        manager.findRequirementLength();
         manager.findLast();
         String[] expected = {"Alien", "Deadpool", "Hellboy"};
         String[] actual = manager.findLast();
@@ -38,7 +37,6 @@ public class PosterManagerTest {
         manager.addMovie("Alien");
         manager.addMovie("Dune: Part Two");
         manager.addMovie("Twisters");
-        manager.findRequirementLength();
         manager.findLast();
         String[] expected = {"Twisters", "Dune: Part Two", "Alien", "Deadpool", "Hellboy"};
         String[] actual = manager.findLast();
@@ -55,7 +53,6 @@ public class PosterManagerTest {
         manager.addMovie("Beetlejuice Beetlejuice");
         manager.addMovie("Dune: Part Two");
         manager.addMovie("Twisters");
-        manager.findRequirementLength();
         String[] expected = {"Twisters", "Dune: Part Two", "Beetlejuice Beetlejuice", "Moana 2", "Wicked",
                 "Despicable Me 4"};
         String[] actual = manager.findLast();

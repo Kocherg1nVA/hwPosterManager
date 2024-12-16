@@ -4,8 +4,6 @@ public class PosterManager {
 
     private String[] movie = new String[0];
     private int limit;
-    private int requiredLength;
-
 
     public PosterManager() {
         this.limit = 5;
@@ -28,16 +26,8 @@ public class PosterManager {
         return this.movie;
     }
 
-    public void findRequirementLength() {
-        if (this.movie.length < this.limit) {
-            this.requiredLength = this.movie.length;
-        } else {
-            this.requiredLength = this.limit;
-        }
-    }
-
     public String[] findLast() {
-        if (this.requiredLength < this.movie.length) {
+        if (this.limit < this.movie.length) {
             int result = this.movie.length - this.limit;
             String[] last = new String[this.limit];
             for (int i = 0; i < this.movie.length - result; i++) {
@@ -45,7 +35,7 @@ public class PosterManager {
             }
             return last;
         } else {
-            String[] last = new String[this.requiredLength];
+            String[] last = new String[this.movie.length];
             for (int i = 0; i < this.movie.length; i++) {
                 last[i] = this.movie[this.movie.length - 1 - i];
             }
