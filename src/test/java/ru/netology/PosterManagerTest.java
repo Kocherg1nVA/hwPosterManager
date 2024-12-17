@@ -23,7 +23,7 @@ public class PosterManagerTest {
         manager.addMovie("Hellboy");
         manager.addMovie("Deadpool");
         manager.addMovie("Alien");
-        manager.findLast();
+//        manager.findLast();
         String[] expected = {"Alien", "Deadpool", "Hellboy"};
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
